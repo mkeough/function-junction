@@ -4,35 +4,62 @@
  * construct available in Javascript.
  */
 
-// ...
+const max = (a, b) => {
+  if (a > b) {
+    return a
+  } else {
+    return b
+  }
+}
 
 /**
  * 2) Define a function maxOfThree() that takes three
  * numbers as arguments and returns the largest of them.
  */
 
-// ...
+const maxOfThree = (a, b, c) => {
+  if (a > b && a > c) {
+    return a
+  } else if (b > a && b > c) {
+    return b
+  } else {
+    return c
+  }
+}
 
 /*
  * 3) Define a function sum() that takes two numbers as
  * arguments and computes the sum of those two numbers.
  */
 
-// ...
+const sum = (a, b) => {
+  return a + b
+}
 
 /*
  * 4) Define a function sumOfArray that calculates the sum of
  * all the numbers in an array.
  */
 
-// ...
+const sumOfArray = arr => {
+  let count = 0
+  arr.forEach(item => {
+    count += item
+  })
+  return count
+}
 
 /**
  * 5) Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
-
-// ...
+const isVowel = char => {
+  if (char.match(/[aeiouAEIOU]/)) {
+    return true
+  } else {
+    return false
+  }
+}
 
 /**
  * 6) Write a function rovarspraket() that will translate
@@ -43,7 +70,20 @@
  * return the string "tothohisos isos fofunon".
  */
 
-// ...
+const rovarspraket = text => {
+  const string = text.toLowerCase()
+  const vowels = ['a', 'e', 'i', 'o', 'u', '']
+  let y = ''
+  for (let i = 0; i < string.length; i++) {
+    let current = string.charAt(i)
+    if (vowels.indexOf(current) != -1) {
+      y = y + current
+    } else {
+      y = y + (current + 'o' + current)
+    }
+  }
+  return y
+}
 
 /**
  * 7) Define a function reverse() that computes
@@ -52,7 +92,12 @@
  * string "books".
  */
 
-// ...
+const reverse = word => {
+  return word
+    .split('')
+    .reverse()
+    .join('')
+}
 
 /**
  * 8) Write a function findLongestWord() that takes an
@@ -61,7 +106,16 @@
  * i.e. findLongestWord("book dogs") should return "book"
  */
 
-// ...
+const findLongestWord = str => {
+  const arr = str.split(' ')
+  let longest = ''
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > longest.length) {
+      longest = arr[i]
+    }
+  }
+  return longest
+}
 
 /**
  * NOTE: Don't modify anything below this line...
